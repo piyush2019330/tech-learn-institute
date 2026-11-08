@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CBSE Class 11 Informatics Practices (Code 065) - Official Chapter Notes PDF</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; line-height: 1.6; color: #1e293b; max-width: 900px; margin: 0 auto; padding: 2rem; }
+    h1, h2, h3 { color: #0f172a; }
+    .header { text-align: center; border-bottom: 3px solid #6366f1; padding-bottom: 1rem; margin-bottom: 2rem; }
+    .badge { background: #e0e7ff; color: #4338ca; padding: 0.25rem 0.6rem; border-radius: 9999px; font-weight: 700; font-size: 0.85rem; }
+    .chapter-box { background: #f8fafc; border: 1px solid #e2e8f0; border-left: 5px solid #6366f1; border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem; }
+    pre { background: #0f172a; color: #38bdf8; padding: 1rem; border-radius: 6px; overflow-x: auto; font-family: "Courier New", monospace; }
+    .qa-box { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 1rem; margin-top: 1rem; }
+    .answer { color: #059669; font-weight: 500; margin-top: 0.4rem; }
+    @media print {
+      body { padding: 0; }
+      .no-print { display: none; }
+      .chapter-box { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="no-print" style="margin-bottom: 1.5rem; text-align: right;">
+    <button onclick="window.print()" style="background: #10b981; color: white; padding: 0.6rem 1.2rem; border: none; border-radius: 6px; font-weight: 600; cursor: pointer;">
+      🖨️ Print / Save as PDF (Ctrl+P / Cmd+P)
+    </button>
+  </div>
+
+  <div class="header">
+    <span class="badge">CBSE Syllabus (Code 065)</span>
+    <h1 style="margin-top: 0.5rem; margin-bottom: 0.2rem;">Tech Learn Institute</h1>
+    <h3>Class 11 Informatics Practices (IP) — Chapter-Wise Study Notes PDF</h3>
+    <p style="color: #64748b; font-size: 0.9rem;">Instructor: Piyush | WhatsApp: 8974003523 | Email: pp8842973@gmail.com</p>
+  </div>
+
+  <div class="chapter-box">
+    <h2>Chapter 1: Introduction to Computer System</h2>
+    <p><strong>CPU Architecture:</strong> ALU (Arithmetic Logic), CU (Control Unit), Registers.</p>
+    <p><strong>Memory:</strong> RAM (Volatile, temporary), ROM (Non-volatile, BIOS firmware).</p>
+    <p><strong>Secondary Storage:</strong> SSD, HDD, Flash Drives.</p>
+    <p><strong>Software:</strong> System Software (OS, Compiler) vs Application Software.</p>
+    <div class="qa-box">
+      <strong>Q1: What is the main difference between RAM and ROM?</strong>
+      <div class="answer">RAM loses its data when powered off (volatile). ROM keeps bootup instructions permanently (non-volatile).</div>
+    </div>
+  </div>
+
+  <div class="chapter-box">
+    <h2>Chapter 2: Introduction to Python & Control Flow</h2>
+    <p><strong>Tokens:</strong> Keywords, Identifiers, Literals, Operators, Punctuators.</p>
+    <p><strong>Operators:</strong> <code>//</code> (floor division), <code>%</code> (modulus remainder), <code>**</code> (exponent).</p>
+    <pre># Python Control Flow
+for i in range(1, 6):
+    print(i, i**2)</pre>
+    <div class="qa-box">
+      <strong>Q1: What is the output of range(2, 10, 3)?</strong>
+      <div class="answer">2, 5, 8</div>
+    </div>
+  </div>
+
+  <div class="chapter-box">
+    <h2>Chapter 3: Python Lists and Dictionaries</h2>
+    <p><strong>Lists:</strong> Ordered, mutable sequences indexed by position: <code>[10, 20, 30]</code>.</p>
+    <p><strong>Dictionaries:</strong> Unordered, mutable key-value collections: <code>{'name': 'Aarav', 'marks': 95}</code>.</p>
+  </div>
+
+  <div class="chapter-box">
+    <h2>Chapter 4: Database Concepts and SQL</h2>
+    <p><strong>Relational Model:</strong> Relation (Table), Attribute (Column), Tuple (Row), Degree (Col count), Cardinality (Row count).</p>
+    <pre>CREATE TABLE Student (
+    RollNo INT PRIMARY KEY,
+    Name VARCHAR(50),
+    Marks INT
+);
+SELECT * FROM Student WHERE Marks > 80 ORDER BY Marks DESC;</pre>
+  </div>
+
+  <div class="chapter-box">
+    <h2>Chapter 5: Introduction to Emerging Trends</h2>
+    <p><strong>Technologies:</strong> Artificial Intelligence (AI), Machine Learning (ML), Big Data (5 Vs: Volume, Velocity, Variety, Veracity, Value), Cloud Computing (SaaS, IaaS, PaaS), Blockchain.</p>
+  </div>
+
+  <div style="text-align: center; margin-top: 3rem; color: #94a3b8; font-size: 0.85rem;">
+    © Tech Learn Institute • CBSE Class 11-12 IP & Data Science • WhatsApp: 8974003523 • pp8842973@gmail.com
+  </div>
+</body>
+</html>
