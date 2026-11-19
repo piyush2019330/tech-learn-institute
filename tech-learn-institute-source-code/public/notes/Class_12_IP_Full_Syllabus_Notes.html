@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CBSE Class 12 Informatics Practices (Code 065) - Official Chapter Notes PDF</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; line-height: 1.6; color: #1e293b; max-width: 900px; margin: 0 auto; padding: 2rem; }
+    h1, h2, h3 { color: #0f172a; }
+    .header { text-align: center; border-bottom: 3px solid #6366f1; padding-bottom: 1rem; margin-bottom: 2rem; }
+    .badge { background: #e0e7ff; color: #4338ca; padding: 0.25rem 0.6rem; border-radius: 9999px; font-weight: 700; font-size: 0.85rem; }
+    .chapter-box { background: #f8fafc; border: 1px solid #e2e8f0; border-left: 5px solid #6366f1; border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem; }
+    pre { background: #0f172a; color: #38bdf8; padding: 1rem; border-radius: 6px; overflow-x: auto; font-family: "Courier New", monospace; }
+    .qa-box { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 1rem; margin-top: 1rem; }
+    .answer { color: #059669; font-weight: 500; margin-top: 0.4rem; }
+    @media print {
+      body { padding: 0; }
+      .no-print { display: none; }
+      .chapter-box { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="no-print" style="margin-bottom: 1.5rem; text-align: right;">
+    <button onclick="window.print()" style="background: #10b981; color: white; padding: 0.6rem 1.2rem; border: none; border-radius: 6px; font-weight: 600; cursor: pointer;">
+      🖨️ Print / Save as PDF (Ctrl+P / Cmd+P)
+    </button>
+  </div>
+
+  <div class="header">
+    <span class="badge">CBSE Board Exam Preparation (Code 065)</span>
+    <h1 style="margin-top: 0.5rem; margin-bottom: 0.2rem;">Tech Learn Institute</h1>
+    <h3>Class 12 Informatics Practices (IP) — Complete Chapter Study Notes</h3>
+    <p style="color: #64748b; font-size: 0.9rem;">Instructor: Piyush | WhatsApp: 8974003523 | Email: pp8842973@gmail.com</p>
+  </div>
+
+  <div class="chapter-box">
+    <h2>Chapter 1: Data Handling using Pandas - I (Series)</h2>
+    <p><strong>1. Series Definition:</strong> A 1-Dimensional labeled array capable of holding any data type.</p>
+    <pre>import pandas as pd
+s = pd.Series([98, 95, 92], index=['IP', 'Math', 'English'])
+print(s)</pre>
+    <p><strong>Key Attributes:</strong> <code>s.index</code>, <code>s.values</code>, <code>s.shape</code>, <code>s.dtype</code>, <code>s.size</code>, <code>s.empty</code>.</p>
+    <div class="qa-box">
+      <strong>Q1: What happens during arithmetic operations between two Series with different index labels?</strong>
+      <div class="answer">Pandas aligns elements based on index labels. Unmatched indexes result in NaN (Not a Number).</div>
+    </div>
+  </div>
+
+  <div class="chapter-box">
+    <h2>Chapter 2: Data Handling using Pandas - II (DataFrames & CSV)</h2>
+    <p><strong>1. DataFrame Definition:</strong> A 2-Dimensional labeled data structure with columns of potentially different types.</p>
+    <pre>data = {'Student': ['Aarav', 'Priya'], 'IP_Marks': [98, 95]}
+df = pd.DataFrame(data)
+print(df[df['IP_Marks'] >= 95])</pre>
+    <p><strong>Indexing:</strong> <code>df.loc[row_label, col_label]</code> (label-based) vs <code>df.iloc[row_pos, col_pos]</code> (integer-based).</p>
+    <p><strong>CSV Files:</strong> <code>df.to_csv('marks.csv', index=False)</code> and <code>df = pd.read_csv('marks.csv')</code>.</p>
+  </div>
+
+  <div class="chapter-box">
+    <h2>Chapter 3: Plotting Data using Matplotlib</h2>
+    <p><strong>1. Plot Types:</strong> Line plot (<code>plt.plot()</code>), Bar chart (<code>plt.bar()</code>), Histogram (<code>plt.hist()</code>).</p>
+    <p><strong>2. Customization:</strong> <code>plt.title()</code>, <code>plt.xlabel()</code>, <code>plt.ylabel()</code>, <code>plt.legend()</code>, <code>plt.grid()</code>, <code>plt.savefig('chart.png')</code>.</p>
+  </div>
+
+  <div class="chapter-box">
+    <h2>Chapter 4: Database Querying using SQL Functions</h2>
+    <p><strong>Math Functions:</strong> <code>POWER(m, n)</code>, <code>ROUND(n, d)</code>, <code>MOD(n, m)</code>.</p>
+    <p><strong>String Functions:</strong> <code>UPPER()</code>, <code>LOWER()</code>, <code>SUBSTR()</code>, <code>LENGTH()</code>, <code>INSTR()</code>, <code>TRIM()</code>.</p>
+    <p><strong>Date Functions:</strong> <code>NOW()</code>, <code>CURDATE()</code>, <code>DAYNAME()</code>, <code>MONTHNAME()</code>, <code>YEAR()</code>.</p>
+    <p><strong>Aggregate Functions:</strong> <code>SUM()</code>, <code>AVG()</code>, <code>MIN()</code>, <code>MAX()</code>, <code>COUNT()</code>, <code>COUNT(*)</code>.</p>
+  </div>
+
+  <div class="chapter-box">
+    <h2>Chapter 5: Querying with GROUP BY, HAVING & Multi-Table Joins</h2>
+    <p><strong>GROUP BY:</strong> Groups records sharing common values.</p>
+    <p><strong>HAVING:</strong> Filters grouped records after aggregate evaluation.</p>
+    <p><strong>Equi-Join:</strong> <code>SELECT * FROM Student s, Dept d WHERE s.DeptId = d.DeptId;</code></p>
+  </div>
+
+  <div class="chapter-box">
+    <h2>Chapter 6: Computer Networks & Devices</h2>
+    <p><strong>Topologies:</strong> Star (central switch), Bus (backbone cable), Tree, Mesh.</p>
+    <p><strong>Devices:</strong> Modem, Hub (broadcast), Switch (unicast packet router), Repeater (amplifier), Router (IP gateway).</p>
+  </div>
+
+  <div class="chapter-box">
+    <h2>Chapter 7: Societal Impacts, Cyber Safety & IT Act</h2>
+    <p><strong>Digital Footprint:</strong> Active (deliberate) vs Passive (automatic browsing cookies).</p>
+    <p><strong>Cybercrimes:</strong> Phishing, Cyber bullying, Plagiarism, Copyright infringement.</p>
+    <p><strong>Indian IT Act 2000:</strong> Legal framework for digital contracts and cybercrime penalties.</p>
+  </div>
+
+  <div style="text-align: center; margin-top: 3rem; color: #94a3b8; font-size: 0.85rem;">
+    © Tech Learn Institute • CBSE Class 11-12 IP & Data Science • WhatsApp: 8974003523 • pp8842973@gmail.com
+  </div>
+</body>
+</html>
