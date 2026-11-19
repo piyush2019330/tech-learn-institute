@@ -48,14 +48,32 @@ export default function ContactSection() {
       });
     } catch (err) {
       console.log('Saved locally / API simulation active', err);
-    } finally {
-      setIsSaving(false);
-      setSubmitted(true);
-
-      // 2. Open WhatsApp with pre-filled lead details to admin number 8974003523
-      const waUrl = `https://wa.me/91${adminWhatsApp}?text=${formatNotificationMessage()}`;
-      window.open(waUrl, '_blank');
     }
+
+    // 2. Also persist in local storage for instant Admin review on Vercel/Offline
+    try {
+      const existing = JSON.parse(localStorage.getItem('tech_learn_admissions') || '[]');
+      const newEntry = {
+        id: Date.now(),
+        student_name: formData.name,
+        phone_number: formData.phone,
+        email_id: formData.email,
+        course_name: formData.course,
+        message: formData.message,
+        fee_amount: 'Online Batch',
+        timing_slot: 'Online Class (Flexible Timing)',
+        status: 'Confirmed',
+        created_at: new Date().toISOString().replace('T', ' ').slice(0, 19)
+      };
+      localStorage.setItem('tech_learn_admissions', JSON.stringify([newEntry, ...existing]));
+    } catch (e) {}
+
+    setIsSaving(false);
+    setSubmitted(true);
+
+    // 2. Open WhatsApp with pre-filled lead details to admin number 8974003523
+    const waUrl = `https://wa.me/91${adminWhatsApp}?text=${formatNotificationMessage()}`;
+    window.open(waUrl, '_blank');
   };
 
   const directWhatsAppUrl = `https://wa.me/91${adminWhatsApp}?text=${formatNotificationMessage()}`;

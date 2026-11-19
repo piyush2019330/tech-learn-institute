@@ -17,7 +17,7 @@ export default function IPSpecialSection({ onOpenDemo }) {
               </h2>
 
               <p style={{ color: '#cbd5e1', fontSize: '1.05rem', marginBottom: '1.5rem', lineHeight: '1.7' }}>
-                Designed strictly as per the latest CBSE NCERT curriculum. We bridge the gap between textbook theory and practical execution, helping students achieve 95+ marks in both Class 11 finals & Class 12 Board Exams.
+                Designed strictly as per the latest CBSE NCERT curriculum. We bridge the gap between textbook theory and practical execution, helping students achieve conceptual clarity, hands-on coding mastery, and board examination excellence.
               </p>
 
               <div className="ip-feature-list">
@@ -75,7 +75,7 @@ export default function IPSpecialSection({ onOpenDemo }) {
             }}>
               <h3 style={{ fontSize: '1.4rem', color: '#ffffff', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
                 <ShieldCheck color="#10b981" size={24} />
-                How We Ensure 95+ in Board Exam
+                How We Ensure Board Examination Excellence
               </h3>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem', marginTop: '1.5rem' }}>

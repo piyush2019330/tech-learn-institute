@@ -23,6 +23,7 @@ export default function CourseCatalog({ onOpenDemo }) {
 
   const filteredCourses = COURSES.filter(course => {
     if (activeTab === 'all') return true;
+    if (activeTab === 'systems') return course.id === 'linux-fundamentals' || course.id === 'computer-networking';
     return course.category === activeTab;
   });
 
@@ -52,7 +53,7 @@ export default function CourseCatalog({ onOpenDemo }) {
             Our Teaching Programs & <span className="gradient-text">Courses</span>
           </h2>
           <p className="section-subtitle">
-            Whether you want to score 95+ in CBSE Class 11-12 IP board exams, launch a career in Data Science, or master individual tools like Python, SQL, ML, & Power BI.
+            Master CBSE Class 11-12 IP board exams, launch a career in Data Science, explore Linux System Administration, or build Computer Networking expertise with live practical labs.
           </p>
         </div>
 
@@ -69,6 +70,12 @@ export default function CourseCatalog({ onOpenDemo }) {
             onClick={() => setActiveTab('cbse')}
           >
             Class 11 & 12 IP (CBSE)
+          </button>
+          <button 
+            className={`tab-btn ${activeTab === 'systems' ? 'active' : ''}`}
+            onClick={() => setActiveTab('systems')}
+          >
+            Linux & Networking
           </button>
           <button 
             className={`tab-btn ${activeTab === 'career-track' ? 'active' : ''}`}
@@ -100,7 +107,7 @@ export default function CourseCatalog({ onOpenDemo }) {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', marginBottom: '0.5rem' }}>
                   <Star size={15} fill="#f59e0b" color="#f59e0b" />
                   <strong style={{ fontSize: '0.85rem' }}>{course.rating}</strong>
-                  <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>({course.studentsCount})</span>
+                  <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>({course.duration} • Live Online)</span>
                 </div>
 
                 <h3 className="course-title">{course.title}</h3>

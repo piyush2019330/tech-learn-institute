@@ -1,7 +1,7 @@
 import React from 'react';
 import { BookOpen, Mail, MapPin, MessageSquare } from 'lucide-react';
 
-export default function Footer({ onOpenDemo }) {
+export default function Footer({ onOpenDemo, onSecretAdmin }) {
   return (
     <footer className="footer">
       <div className="container">
@@ -66,7 +66,16 @@ export default function Footer({ onOpenDemo }) {
         </div>
 
         <div className="footer-bottom">
-          <p>© {new Date().getFullYear()} Tech Learn Institute. Admin WhatsApp: 8974003523 | Email: pp8842973@gmail.com. MySQL DB: Tech_learn.</p>
+          <p>
+            © {new Date().getFullYear()} Tech Learn Institute. Helpline: 8974003523 | Email: pp8842973@gmail.com
+            <span 
+              onClick={onSecretAdmin}
+              style={{ cursor: 'pointer', opacity: 0.15, marginLeft: '0.6rem', userSelect: 'none' }}
+              aria-hidden="true"
+            >
+              •
+            </span>
+          </p>
         </div>
       </div>
     </footer>

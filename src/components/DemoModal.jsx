@@ -49,14 +49,32 @@ export default function DemoModal({ isOpen, onClose, defaultCourse }) {
       });
     } catch (err) {
       console.log('Saved to MySQL / local backup', err);
-    } finally {
-      setIsSubmitting(false);
-      setSubmitted(true);
-
-      // Open WhatsApp chat directly with Admin WhatsApp 8974003523
-      const waUrl = `https://wa.me/91${adminWhatsApp}?text=${formatNotificationMessage()}`;
-      window.open(waUrl, '_blank');
     }
+
+    // Persist in local storage for instant Admin review on Vercel/Offline
+    try {
+      const existing = JSON.parse(localStorage.getItem('tech_learn_admissions') || '[]');
+      const newEntry = {
+        id: Date.now(),
+        student_name: formData.name,
+        phone_number: formData.phone,
+        email_id: formData.email,
+        course_name: formData.course,
+        message: 'Booked Free Demo Class',
+        fee_amount: 'Demo Reserved',
+        timing_slot: formData.slot || 'Online Class (Flexible Timing)',
+        status: 'Confirmed',
+        created_at: new Date().toISOString().replace('T', ' ').slice(0, 19)
+      };
+      localStorage.setItem('tech_learn_admissions', JSON.stringify([newEntry, ...existing]));
+    } catch (e) {}
+
+    setIsSubmitting(false);
+    setSubmitted(true);
+
+    // Open WhatsApp chat directly with Admin WhatsApp 8974003523
+    const waUrl = `https://wa.me/91${adminWhatsApp}?text=${formatNotificationMessage()}`;
+    window.open(waUrl, '_blank');
   };
 
   const directWhatsAppUrl = `https://wa.me/91${adminWhatsApp}?text=${formatNotificationMessage()}`;

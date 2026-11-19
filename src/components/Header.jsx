@@ -1,5 +1,5 @@
 import React from 'react';
-import { BookOpen, Sun, Moon, Sparkles, MessageSquare, ShieldCheck, GraduationCap } from 'lucide-react';
+import { BookOpen, Sun, Moon, Sparkles, GraduationCap } from 'lucide-react';
 
 export default function Header({ theme, toggleTheme, onOpenDemo, onOpenAdmin, onOpenStudentPortal }) {
   return (
@@ -28,15 +28,6 @@ export default function Header({ theme, toggleTheme, onOpenDemo, onOpenAdmin, on
             title="Student LMS Login"
           >
             <GraduationCap size={16} /> Student Login
-          </button>
-
-          <button 
-            className="btn-secondary" 
-            onClick={onOpenAdmin}
-            style={{ padding: '0.45rem 0.85rem', fontSize: '0.85rem', borderColor: 'var(--border-glow)' }}
-            title="Open Admin Portal"
-          >
-            <ShieldCheck size={16} color="var(--primary-indigo)" /> Admin Panel
           </button>
 
           <button 

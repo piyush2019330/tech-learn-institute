@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, CheckCircle2, Award, Terminal, Code2, Database, Cpu, Layout } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Award, Terminal, Code2, Database, Cpu, Layout, Network, Server } from 'lucide-react';
 
 export default function Hero({ onOpenDemo }) {
   return (
@@ -13,11 +13,11 @@ export default function Hero({ onOpenDemo }) {
           </div>
           
           <h1 className="hero-title">
-            Master <span className="gradient-text">Class 11 & 12 IP</span> & <span className="gradient-text-cyan">Data Science</span>
+            Master <span className="gradient-text">Class 11 & 12 IP</span>, <span className="gradient-text-cyan">Data Science</span> & <span style={{ color: '#10b981' }}>Linux & Networks</span>
           </h1>
 
           <p className="hero-description">
-            Specialized coaching institute for CBSE Informatics Practices (Code 065), Full Data Science Career Track, and Individual Skill Masterclasses in Python, SQL, Machine Learning & Power BI.
+            Specialized coaching institute for CBSE Informatics Practices (Code 065), Full Data Science Career Track, Linux System Administration & Shell Scripting, and Computer Networking & Protocols with 100% hands-on practical labs.
           </p>
 
           <div className="hero-badges">
@@ -29,6 +29,12 @@ export default function Hero({ onOpenDemo }) {
             </div>
             <div className="badge-pill">
               <Database size={14} /> SQL Queries
+            </div>
+            <div className="badge-pill" style={{ borderColor: 'rgba(16, 185, 129, 0.4)', color: '#10b981' }}>
+              <Terminal size={14} /> Linux & Bash Shell
+            </div>
+            <div className="badge-pill" style={{ borderColor: 'rgba(6, 182, 212, 0.4)', color: '#06b6d4' }}>
+              <Network size={14} /> Computer Networking (TCP/IP)
             </div>
             <div className="badge-pill">
               <Cpu size={14} /> Machine Learning
@@ -49,16 +55,16 @@ export default function Hero({ onOpenDemo }) {
 
           <div className="hero-stats">
             <div>
-              <div className="stat-number">98%</div>
-              <div className="stat-label">Class 12 IP Highest Marks</div>
-            </div>
-            <div>
-              <div className="stat-number">1,200+</div>
-              <div className="stat-label">Students Mentored</div>
-            </div>
-            <div>
               <div className="stat-number">100%</div>
               <div className="stat-label">Hands-on Practical Labs</div>
+            </div>
+            <div>
+              <div className="stat-number">Linux & Net</div>
+              <div className="stat-label">System & Cloud Infra Labs</div>
+            </div>
+            <div>
+              <div className="stat-number">10+ Modules</div>
+              <div className="stat-label">Specialized Tech & Board Tracks</div>
             </div>
           </div>
         </div>
@@ -72,7 +78,7 @@ export default function Hero({ onOpenDemo }) {
               <span className="dot dot-green"></span>
             </div>
             <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>
-              tech_learn_curriculum.py
+              tech_learn_terminal.sh
             </span>
           </div>
 
@@ -89,6 +95,20 @@ export default function Hero({ onOpenDemo }) {
               <div>
                 <strong style={{ fontSize: '0.9rem', display: 'block' }}>MySQL Database</strong>
                 <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Queries & Joins</span>
+              </div>
+            </div>
+            <div className="tech-card">
+              <div className="tech-icon linux-icon">🐧</div>
+              <div>
+                <strong style={{ fontSize: '0.9rem', display: 'block' }}>Linux & Bash</strong>
+                <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>CLI & Permissions</span>
+              </div>
+            </div>
+            <div className="tech-card">
+              <div className="tech-icon net-icon">🌐</div>
+              <div>
+                <strong style={{ fontSize: '0.9rem', display: 'block' }}>Networking</strong>
+                <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>OSI & TCP/IP Protocols</span>
               </div>
             </div>
             <div className="tech-card">
@@ -117,11 +137,12 @@ export default function Hero({ onOpenDemo }) {
             lineHeight: '1.6',
             color: '#a7f3d0'
           }}>
-            <div style={{ color: '#64748b' }}># Class 12 IP Pandas DataFrame & Board Query Example</div>
-            <div>import pandas as pd</div>
-            <div>df = pd.DataFrame&#40;&#123;'Student': ['Aarav', 'Priya'], 'IP_Score': [98, 99]&#125;&#41;</div>
-            <div style={{ color: '#fbbf24' }}>print&#40;df[df['IP_Score'] &gt; 95]&#41;</div>
-            <div style={{ color: '#38bdf8', marginTop: '0.4rem' }}># Result: Top Board Performers Ready! 🚀</div>
+            <div style={{ color: '#64748b' }}># Tech Learn Unified Practical Environment</div>
+            <div>$ uname -srmo && python3 -V</div>
+            <div style={{ color: '#38bdf8' }}>Linux 6.8.0 x86_64 GNU/Linux | Python 3.12.2</div>
+            <div>$ ping -c 1 techlearn.local</div>
+            <div style={{ color: '#fbbf24' }}>64 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=0.04 ms</div>
+            <div style={{ color: '#a7f3d0', marginTop: '0.4rem' }}># System ready: IP Board Prep, Data Science, Linux & Networking 🚀</div>
           </div>
         </div>
       </div>

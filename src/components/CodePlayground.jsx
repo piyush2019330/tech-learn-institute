@@ -4,56 +4,97 @@ import { Terminal, Play, RotateCcw, Sparkles, CheckCircle } from 'lucide-react';
 const DEMO_SNIPPETS = {
   python: {
     title: 'Python Pandas (Class 12 IP & Data Science)',
-    code: `# Creating a Pandas DataFrame for Student IP Marks
+    code: `# Creating a Pandas DataFrame for Student Projects & IP Labs
 import pandas as pd
 
 data = {
   'Student': ['Aarav', 'Priya', 'Rohan', 'Sneha'],
-  'IP_Score': [98, 95, 92, 99],
-  'SQL_Grade': ['A+', 'A+', 'A', 'A+']
+  'Module': ['Python Pandas', 'SQL Database', 'Linux SysAdmin', 'Computer Networks'],
+  'Status': ['Completed', 'Completed', 'In Progress', 'Completed']
 }
 
 df = pd.DataFrame(data)
-print("--- TOP BOARD PERFORMERS ---")
-print(df[df['IP_Score'] >= 95])`,
-    output: `--- TOP BOARD PERFORMERS ---
-  Student  IP_Score SQL_Grade
-0   Aarav        98        A+
-1   Priya        95        A+
-3   Sneha        99        A+
+print("--- TECH LEARN LAB STATUS ---")
+print(df[df['Status'] == 'Completed'])`,
+    output: `--- TECH LEARN LAB STATUS ---
+  Student          Module     Status
+0   Aarav   Python Pandas  Completed
+1   Priya    SQL Database  Completed
+3   Sneha Computer Networks Completed
 
 Execution completed in 0.04s [Success ✅]`
   },
+  linux: {
+    title: 'Linux Administration (Bash CLI & Permissions)',
+    code: `# Linux System Diagnostics & Process Management
+$ uname -srmo
+$ df -h /
+$ ps aux | grep -E "python|mysql" | head -n 3
+$ chmod 755 /var/www/tech_learn_app
+$ ls -ld /var/www/tech_learn_app`,
+    output: `Linux 6.8.0-31-generic x86_64 GNU/Linux
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/nvme0n1p2  240G   48G  180G  21% /
+root        1024  0.0  0.4  python3 server.py
+mysql       1089  0.1  1.2  mysqld --daemon
+drwxr-xr-x 4 root staff 4096 Oct 12 10:00 /var/www/tech_learn_app
+
+Status: Server Health Normal | Permissions Verified ✅`
+  },
+  networking: {
+    title: 'Computer Networking (DNS, TCP/IP & Protocol Inspection)',
+    code: `# Network Diagnostics & Protocol Inspection
+$ nslookup techlearn.edu.in
+$ ping -c 3 8.8.8.8
+$ netstat -tuln | grep -E ":80|:443|:3306"
+$ curl -I https://techlearn.edu.in`,
+    output: `Server:         1.1.1.1
+Address:        1.1.1.1#53
+Name:   techlearn.edu.in
+Address: 104.21.55.22
+
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=118 time=12.4 ms
+64 bytes from 8.8.8.8: icmp_seq=2 ttl=118 time=11.9 ms
+64 bytes from 8.8.8.8: icmp_seq=3 ttl=118 time=12.1 ms
+
+tcp   0  0 0.0.0.0:80    0.0.0.0:*  LISTEN (HTTP)
+tcp   0  0 0.0.0.0:443   0.0.0.0:*  LISTEN (HTTPS)
+tcp   0  0 127.0.0.1:3306 0.0.0.0:* LISTEN (MySQL)
+
+HTTP/2 200 OK | TLS 1.3 Active | Protocol Analysis Complete 🚀`
+  },
   sql: {
-    title: 'MySQL Queries (Board Exam & Data Engineering)',
-    code: `-- SQL Query to find Average Marks by Subject
-SELECT Subject, COUNT(Student_ID) AS Total_Students, AVG(Marks) AS Avg_Score
-FROM Student_Marks
-GROUP BY Subject
-HAVING AVG(Marks) > 90
-ORDER BY Avg_Score DESC;`,
-    output: `+-----------------------+----------------+-----------+
-| Subject               | Total_Students | Avg_Score |
-+-----------------------+----------------+-----------+
-| Informatics Practices |            120 |     94.50 |
-| Data Science Track    |            250 |     92.80 |
-+-----------------------+----------------+-----------+
-2 rows in set (0.01 sec)`
+    title: 'MySQL Queries (Database Mastery & Practical Labs)',
+    code: `-- SQL Query to analyze course enrollments
+SELECT Course_Category, COUNT(Enrollment_ID) AS Total_Enrollments
+FROM Courses
+GROUP BY Course_Category
+ORDER BY Total_Enrollments DESC;`,
+    output: `+----------------------------+-------------------+
+| Course_Category            | Total_Enrollments |
++----------------------------+-------------------+
+| Class 11-12 IP Board Prep  |                45 |
+| Linux & SysAdmin Lab       |                38 |
+| Computer Networking (Net)  |                35 |
+| Data Science Track         |                50 |
++----------------------------+-------------------+
+4 rows in set (0.01 sec)`
   },
   ml: {
     title: 'Machine Learning (Predictive Model)',
-    code: `# Supervised Machine Learning Model for Score Prediction
+    code: `# Supervised Machine Learning Model Training
 from sklearn.linear_model import LinearRegression
+import numpy as np
 
-# Study Hours vs Exam Score
-X = [[2], [4], [6], [8]]
-y = [60, 75, 88, 96]
+# Practice Hours vs Skill Mastery Index
+X = np.array([[2], [4], [6], [8], [10]])
+y = np.array([45, 65, 80, 92, 98])
 
 model = LinearRegression().fit(X, y)
-predicted_score = model.predict([[7.5]])
-print(f"Predicted Score for 7.5 hrs study: {predicted_score[0]:.2f}")`,
-    output: `Predicted Score for 7.5 hrs study: 93.25
-Model Accuracy (R² Score): 0.985
+predicted_mastery = model.predict([[7.5]])
+print(f"Predicted Mastery for 7.5 hrs practice: {predicted_mastery[0]:.2f}%")`,
+    output: `Predicted Mastery for 7.5 hrs practice: 88.75%
+Model Accuracy (R² Score): 0.992
 Status: Model Trained Successfully 🎯`
   }
 };
@@ -89,7 +130,7 @@ export default function CodePlayground() {
             Experience Our <span className="gradient-text">Practical Code Playground</span>
           </h2>
           <p className="section-subtitle">
-            At Tech Learn, we don't just teach theory—you write live code from Day 1! Try executing our Python, SQL, and ML code snippets below.
+            At Tech Learn, we don't just teach theory—you write live code and commands from Day 1! Try executing Python, SQL, Linux Bash, Computer Networking, and ML snippets below.
           </p>
         </div>
 
@@ -106,7 +147,19 @@ export default function CodePlayground() {
                 className={`pg-tab ${activeTab === 'sql' ? 'active' : ''}`}
                 onClick={() => handleTabChange('sql')}
               >
-                🛢️ MySQL Query
+                🛢️ MySQL
+              </button>
+              <button 
+                className={`pg-tab ${activeTab === 'linux' ? 'active' : ''}`}
+                onClick={() => handleTabChange('linux')}
+              >
+                🐧 Linux Bash
+              </button>
+              <button 
+                className={`pg-tab ${activeTab === 'networking' ? 'active' : ''}`}
+                onClick={() => handleTabChange('networking')}
+              >
+                🌐 Networking
               </button>
               <button 
                 className={`pg-tab ${activeTab === 'ml' ? 'active' : ''}`}
